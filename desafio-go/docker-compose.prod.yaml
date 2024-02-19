@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  go-app:
+    build:
+      context: src
+      dockerfile: Dockerfile.prod
+    container_name: go-app-prod
+    tty: true
+    entrypoint: ./hello 

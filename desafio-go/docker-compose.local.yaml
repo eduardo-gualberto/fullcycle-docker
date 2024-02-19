@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  go-app:
+    build:
+      context: src
+      dockerfile: Dockerfile.local
+    container_name: go-app
+    volumes:
+      - ./src:/app/src
+    tty: true
+    entrypoint: go run /app/src/hello.go
