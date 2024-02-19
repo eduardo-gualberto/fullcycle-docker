@@ -8,5 +8,5 @@ RUN cd fc-docker/desafio-go/src \
     && go build hello.go \
     && mv hello /
 
-FROM alpine 
+FROM scratch
 COPY --from=builder /hello . 
