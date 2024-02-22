@@ -19,10 +19,10 @@ const insertsql = `INSERT INTO people(name) values('${randomName}');`;
 connection.query(insertsql);
 
 let names = [];
-
 connection.query("SELECT name FROM people;", undefined, (err, result) => {
   names = result.map((item) => `<h3>${item.name}</h3>`);
 });
+
 connection.end();
 
 app.get("/", (req, res) => {
