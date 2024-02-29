@@ -32,6 +32,8 @@ services:
       dockerfile: Dockerfile.node
     image: esgualberto/node
     entrypoint: dockerize -wait tcp://mysql:3306 -timeout 30s node index.js
+    volumes:
+      - ./src:/usr/src/app
     container_name: node
     ports:
       - "3000:3000"
